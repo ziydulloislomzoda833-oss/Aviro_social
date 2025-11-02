@@ -1,8 +1,9 @@
 {
   "name": "aviro_social",
   "version": "1.0.0",
-  "description": "Social media platform like Instagram and TikTok with live streaming and monetization",
+  "description": "Social media platform",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node server.js"
   },
