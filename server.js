@@ -1,18 +1,22 @@
+import express from "express";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-{
-  "name": "aviro_social",
-  "version": "1.0.0",
-  "description": "Social media platform",
-  "main": "server.js",
-  "type": "module",
-  "scripts": {
-    "start": "node --experimental-modules server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "mongoose": "^7.5.0",
-    "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^9.0.2",
-    "cors": "^2.8.5"
-  }
-}
+dotenv.config();
+
+const app = express();
+app.use(express.json());
+
+// подключение к MongoDB Atlas
+const mongoURI = process.env.MONGO_URI;
+
+mongoose.connect(mongoURI)
+  .then(() => console.log("✅ MongoDB connected successfully"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
+
+app.get("/", (req, res) => {
+  res.send("🚀 Aviro Social is running!");
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`✅ Server started on port ${port}`));
