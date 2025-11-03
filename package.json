@@ -1,17 +1,18 @@
 {
   "name": "aviro_social",
   "version": "1.0.0",
-  "description": "Social media platform",
+  "description": "Social media platform backend",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node --experimental-modules server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "mongoose": "^7.5.0",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5"
   }
 }
